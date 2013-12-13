@@ -1,9 +1,10 @@
-D:\workspace\GitHub\game-flow\platforms\android\bin\classes.dex : \
-D:\workspace\GitHub\game-flow\platforms\android\bin\classes\com\phonegap\helloworld\BuildConfig.class \
-D:\workspace\GitHub\game-flow\platforms\android\bin\classes\com\phonegap\helloworld\HelloWorld.class \
-D:\workspace\GitHub\game-flow\platforms\android\bin\classes\com\phonegap\helloworld\R$attr.class \
-D:\workspace\GitHub\game-flow\platforms\android\bin\classes\com\phonegap\helloworld\R$drawable.class \
-D:\workspace\GitHub\game-flow\platforms\android\bin\classes\com\phonegap\helloworld\R$string.class \
-D:\workspace\GitHub\game-flow\platforms\android\bin\classes\com\phonegap\helloworld\R$xml.class \
-D:\workspace\GitHub\game-flow\platforms\android\bin\classes\com\phonegap\helloworld\R.class \
-D:\workspace\GitHub\game-flow\platforms\android\bin\dexedLibs\cordova-3.2.0-0e32bfa439bec64c27febb3f21557547.jar \
+d:\workspace\GitHub\game-flow\app\platforms\android\bin\classes.dex : \
+d:\workspace\GitHub\game-flow\app\platforms\android\bin\classes\com\phonegap\helloworld\HelloWorld.class \
+d:\workspace\GitHub\game-flow\app\platforms\android\bin\classes\com\phonegap\hello_world\BuildConfig.class \
+d:\workspace\GitHub\game-flow\app\platforms\android\bin\classes\com\phonegap\hello_world\HelloWorld.class \
+d:\workspace\GitHub\game-flow\app\platforms\android\bin\classes\com\phonegap\hello_world\R$attr.class \
+d:\workspace\GitHub\game-flow\app\platforms\android\bin\classes\com\phonegap\hello_world\R$drawable.class \
+d:\workspace\GitHub\game-flow\app\platforms\android\bin\classes\com\phonegap\hello_world\R$string.class \
+d:\workspace\GitHub\game-flow\app\platforms\android\bin\classes\com\phonegap\hello_world\R$xml.class \
+d:\workspace\GitHub\game-flow\app\platforms\android\bin\classes\com\phonegap\hello_world\R.class \
+d:\workspace\GitHub\game-flow\app\platforms\android\bin\dexedLibs\cordova-3.2.0-e7bd55a04d7cd992b7d0657ec0fadabd.jar \

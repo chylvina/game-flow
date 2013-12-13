@@ -11,32 +11,18 @@ Connect matching colors with pipe to create a flow. Pair all colors, and cover t
     <meta name="author" content="Mohammed AlMadhoun, mohelm97@gmail.com">
 
     <script type="text/javascript" src="phonegap.js"></script>
-    <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="mkGame.js"></script>
-    <script type="text/javascript" src="jquery.easing.1.3.js"></script>
-    <script type="text/javascript" src="mainJS.js"></script>
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="js/mkGame.js"></script>
+    <script type="text/javascript" src="js/mainJS.js"></script>
 
-    <link rel="icon" href="icon_16.png">
     <link rel="stylesheet" href="style.css">
-
-    <!--3ooooo :D , By Mohammed Nafiz ElMadhoun-->
-
-    <script type="text/javascript">
-
-        $(document).ready(function(){
-            if(window.innerWidth<1050){
-
-            }
-        });
-
-    </script>
 <body>
 
 <div style="text-align:center; margin-top:15px;">
 
     <div class="mainS">
         <div id="main_screen" style="display: block;">
-            <span style="margin-bottom:60px"><img src="flow_logo.png?1"></span>
+            <span style="margin-bottom:60px"><img src="img/flow_logo.png"></span>
             <span class="go_screen link" data-screen="pack_main" data-sound="Sforward">Play</span>
             <a target="new" class="link" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=JZV2LUFN57C6J">Donate</a>
             <a data-sound="Sforward" class="go_screen link" data-screen="how_screen">How To Play</a>
@@ -52,7 +38,7 @@ Connect matching colors with pipe to create a flow. Pair all colors, and cover t
             </div>
 
             <span class="go_screen home_icon" data-screen="main_screen" style="margin:-5px 0 0 70px;"></span>
-            <span style="margin-bottom:60px;margin-right: 100px;"><img src="select_levels.png?1"></span>
+            <span style="margin-bottom:60px;margin-right: 100px;"><img src="img/select_levels.png"></span>
 
             <a data-packid="0" style="color:#efef00">Regular Levels<h5>1/150</h5><span>Free 6x6 to 9x9 boards</span></a><a data-packid="1" style="color:#007dff">Bonus Levels<h5>0/150</h5><span>Free 5x5 to 9x9 boards</span></a><a data-packid="2" style="color:#ff8200">Jumbo Levels<h5>0/150</h5><span>Free 10x10 to 14x14 boards</span></a><a data-packid="3" style="color:#bdba6b">8x8 Levels<h5>0/150</h5><span>Free all 8x8, all the time!</span></a><a data-packid="4" style="color:#ff0000">9x9 Levels<h5>4/150</h5><span>Free all 9x9, all the time!</span></a><a data-packid="5" style="color:#00ff00">Green Levels<h5>0/150</h5><span>Free 5x5 to 9x9 boards</span></a></div>
         <div id="levels_main">
@@ -83,7 +69,7 @@ Connect matching colors with pipe to create a flow. Pair all colors, and cover t
                     <a class="addthis_button_email addthis_button_preferred_3 at300b" target="_blank" title="电子信箱" href="#"><span class=" at300bs at15nc at15t_email"><span class="at_a11y">Share on email</span></span></a>
                     <a class="addthis_button_print addthis_button_preferred_4 at300b" title="打印" href="#"><span class=" at300bs at15nc at15t_print"><span class="at_a11y">Share on print</span></span></a>
                     <a class="addthis_button_gmail addthis_button_preferred_5 at300b" href="http://www.addthis.com/bookmark.php?v=300&amp;winname=addthis&amp;pub=ra-5086d9d82b898e46&amp;source=tbx32-300&amp;lng=zh-CN&amp;s=gmail&amp;url=http%3A%2F%2Fmoh97.us%2Fflow%2F&amp;title=Flow%20Colors&amp;ate=AT-ra-5086d9d82b898e46/-/-/52aa89dc6c0d6062/3&amp;frommenu=1&amp;uid=52aa89dc6ac5d68c&amp;ufbl=1&amp;ct=0&amp;tt=0&amp;captcha_provider=nucaptcha" target="_blank" title="Gmail"><span class=" at300bs at15nc at15t_gmail"><span class="at_a11y">Share on gmail</span></span></a>
-                    <a class="addthis_button_compact at300m"" href="#"><span class=" at300bs at15nc at15t_compact"><span class="at_a11y">More Sharing Services</span></span></a>
+                    <a class="addthis_button_compact at300m" href="#"><span class=" at300bs at15nc at15t_compact"><span class="at_a11y">More Sharing Services</span></span></a>
                     <div class="atclear"></div></div>
                 <span class="scoreT">Total Score : <span id="score">240</span></span>
             </div>

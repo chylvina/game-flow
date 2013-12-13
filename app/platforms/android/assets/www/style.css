@@ -72,7 +72,7 @@ body{
     display:inline-block;
     width:48px;
     height:48px;
-    background:url(controls.png?3) no-repeat right ;
+    background:url(img/controls.png) no-repeat right ;
 
 }
 .home_icon{
