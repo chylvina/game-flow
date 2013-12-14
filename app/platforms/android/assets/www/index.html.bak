@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Flow Colors</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <meta name="keywords" content="games,game,html5,flow,flow free,html5 games,flow html5,puzzle">
+    <meta name="description" content="Flow Colors is a simple yet addictive puzzle game.
+Connect matching colors with pipe to create a flow. Pair all colors, and cover the entire board to solve each puzzle in Flow Colors. But watch out, pipes will break if they cross or overlap!">
+    <meta name="author" content="Mohammed AlMadhoun, mohelm97@gmail.com">
+
+    <script type="text/javascript" src="phonegap.js"></script>
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="js/mkGame.js"></script>
+    <script type="text/javascript" src="js/mainJS.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+<body>
+
+<div style="text-align:center; margin-top:15px;">
+
+    <div class="mainS">
+        <div id="main_screen" style="display: block;">
+            <span style="margin-bottom:60px"><img src="img/flow_logo.png"></span>
+            <span class="go_screen link" data-screen="pack_main" data-sound="Sforward">Play</span>
+            <a target="new" class="link" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=JZV2LUFN57C6J">Donate</a>
+            <a data-sound="Sforward" class="go_screen link" data-screen="how_screen">How To Play</a>
+            <span class="go_screen link" data-screen="about_screen" data-sound="Sforward">About</span>
+            <span class="sound_icon"></span>
+        </div>
+        <div id="pack_main">
+            <div id="open_pack_msg" class="popup_msg">
+                <span class="title">Pack Locked</span>
+                <span class="desc">to unlock Pack please like Flow Colors facebook page</span>
+                <div class="fb-like" style="text-align: left;margin-top: 5px;background-color: #fff;border-radius: 4px;padding: 4px;width: 247px;margin-left: -2px;overflow: hidden;" data-href="https://www.facebook.com/pages/Flow-Colors-In-HTML-5/490726197652256" data-send="false" data-width="250" data-show-faces="true" data-font="segoe ui"></div>
+                <input type="button" value="Cancel" onclick="$(&quot;#open_pack_msg&quot;).fadeOut(&quot;fast&quot;);">
+            </div>
+
+            <span class="go_screen home_icon" data-screen="main_screen" style="margin:-5px 0 0 70px;"></span>
+            <span style="margin-bottom:60px;margin-right: 100px;"><img src="img/select_levels.png"></span>
+
+            <a data-packid="0" style="color:#efef00">Regular Levels<h5>1/150</h5><span>Free 6x6 to 9x9 boards</span></a><a data-packid="1" style="color:#007dff">Bonus Levels<h5>0/150</h5><span>Free 5x5 to 9x9 boards</span></a><a data-packid="2" style="color:#ff8200">Jumbo Levels<h5>0/150</h5><span>Free 10x10 to 14x14 boards</span></a><a data-packid="3" style="color:#bdba6b">8x8 Levels<h5>0/150</h5><span>Free all 8x8, all the time!</span></a><a data-packid="4" style="color:#ff0000">9x9 Levels<h5>4/150</h5><span>Free all 9x9, all the time!</span></a><a data-packid="5" style="color:#00ff00">Green Levels<h5>0/150</h5><span>Free 5x5 to 9x9 boards</span></a></div>
+        <div id="levels_main">
+            <div id="levels">
+            </div>
+            <div id="slideCon">
+                <span class="go_screen home_icon" data-screen="main_screen" style="float: right;margin-right: 15px;"></span>
+                <span id="sback" class="back_icon"></span>
+                <ul id="SCPoint"></ul>
+                <span id="sforw" class="forw_icon"></span>
+                <span class="go_screen back2_icon" data-screen="pack_main"></span>
+            </div>
+        </div>
+        <div id="game_screen">
+            <div style="width:550px;height:550px">
+                <canvas width="550" height="550" id="bgCanvas"></canvas>
+                <canvas width="550" height="550" id="liCanvas"></canvas>
+            </div>
+            <div id="levelCompS" class="popup_msg">
+                <span class="title"></span>
+                <span class="desc"></span>
+                <input type="button" data-id="forw" id="forwCS" value="next level">
+                <input type="button" data-id="retr" id="retrCS" value="play again">
+                <input type="button" id="keepCS" value="keep playing">
+                <div id="share_score" class="addthis_toolbox addthis_default_style addthis_32x32_style" style="margin:10px 0 0 16px">
+                    <a class="addthis_button_facebook at300b" title="Facebook" href="#"><span class=" at300bs at15nc at15t_facebook"><span class="at_a11y">Share on facebook</span></span></a>
+                    <a class="addthis_button_google_plusone_share at300b" href="http://www.addthis.com/bookmark.php?v=300&amp;winname=addthis&amp;pub=ra-5086d9d82b898e46&amp;source=tbx32-300&amp;lng=zh-CN&amp;s=google_plusone_share&amp;url=http%3A%2F%2Fmoh97.us%2Fflow%2F&amp;title=Flow%20Colors&amp;ate=AT-ra-5086d9d82b898e46/-/-/52aa89dc6c0d6062/2&amp;frommenu=1&amp;uid=52aa89dca1ac3b25&amp;ufbl=1&amp;ct=0&amp;tt=0&amp;captcha_provider=nucaptcha" target="_blank" title="Google+"><span class=" at300bs at15nc at15t_google_plusone_share"><span class="at_a11y">Share on google_plusone_share</span></span></a>
+                    <a class="addthis_button_email addthis_button_preferred_3 at300b" target="_blank" title="电子信箱" href="#"><span class=" at300bs at15nc at15t_email"><span class="at_a11y">Share on email</span></span></a>
+                    <a class="addthis_button_print addthis_button_preferred_4 at300b" title="打印" href="#"><span class=" at300bs at15nc at15t_print"><span class="at_a11y">Share on print</span></span></a>
+                    <a class="addthis_button_gmail addthis_button_preferred_5 at300b" href="http://www.addthis.com/bookmark.php?v=300&amp;winname=addthis&amp;pub=ra-5086d9d82b898e46&amp;source=tbx32-300&amp;lng=zh-CN&amp;s=gmail&amp;url=http%3A%2F%2Fmoh97.us%2Fflow%2F&amp;title=Flow%20Colors&amp;ate=AT-ra-5086d9d82b898e46/-/-/52aa89dc6c0d6062/3&amp;frommenu=1&amp;uid=52aa89dc6ac5d68c&amp;ufbl=1&amp;ct=0&amp;tt=0&amp;captcha_provider=nucaptcha" target="_blank" title="Gmail"><span class=" at300bs at15nc at15t_gmail"><span class="at_a11y">Share on gmail</span></span></a>
+                    <a class="addthis_button_compact at300m" href="#"><span class=" at300bs at15nc at15t_compact"><span class="at_a11y">More Sharing Services</span></span></a>
+                    <div class="atclear"></div></div>
+                <span class="scoreT">Total Score : <span id="score">240</span></span>
+            </div>
+            <div id="controls">
+                <span class="go_screen home_icon" data-screen="levels_main"></span>
+                <h3 id="levelName">Level </h3>
+                <span id="back" class="back_icon" data-id="back"></span>
+                <span id="retr" class="retr_icon" data-id="retr"></span>
+                <span id="forw" class="forw_icon" data-id="forw"></span>
+                <h3 id="ScInfo" style="font-size:19px">pipe : <span id="Perc">0</span>%<br>moves : <span id="movesC">0</span>/<span id="movesB">8</span></h3>
+            </div>
+        </div>
+        <div id="about_screen">
+            <span style="margin-bottom:10px"><span style="color:#0FF">A</span><span style="color:#FF0">B</span><span style="color:#f00;">O</span><span style="color:#F77D00">U</span><span style="color:#A42D29">T</span></span>
+            <br><br><br><span style="font-size: 22px;line-height: 50px;">FLOW COLORS in HTML5
+			<br>Developed By
+			<br><a target="new" href="http://facebook.com/moh97">Mohammed N. Madhoun</a><br><a target="new" href="http://moh97.us/blog">My Blog :)</a><br><br>
+			<span class="go_screen" data-screen="main_screen">Back To Menu</span>
+			</span>
+        </div>
+        <div id="how_screen">
+            <span class="go_screen home_icon" data-screen="main_screen" style="margin:10px -60px 0 43px"></span>
+			<span style="margin-bottom:10px"><span style="color:#0FF">h</span><span style="color:#FF0">o</span><span style="color:#f00;">w</span>
+			<span style="color:#F77D00;margin-left:10px;">t</span><span style="color:#A42D29">o</span>
+			<span style="color:#F00; margin-left:10px;">p</span><span style="color:#007d00">l</span><span style="color:#00f">a</span><span style="color:#efeb00">y</span></span>
+
+            <p style="color: white;padding: 10px;text-align: inherit;font-size: 17px;">
+                Connect matching colors with pipe to create a flow. Pair all colors, and cover the entire board to solve each puzzle in Flow Colors. But watch out, pipes will break if they cross or overlap!
+                <br>Free play through hundreds of levels.<br>Flow Colors gameplay ranges from simple and relaxed, to challenging and frenetic, and everywhere in between. How you play is up to you. So, give Flow Colors a try, and experience "mind like water"!
+            </p>
+        </div>
+    </div>
+</div>
+
+<br><br>
+<audio id="Sleak" preload="auto">
+    <source src="sounds/leak.ogg" type="audio/ogg">
+    <source src="sounds/leak.mp3" type="audio/mp3">
+</audio>
+<audio id="Sforward" preload="auto">
+    <source src="sounds/forward.ogg" type="audio/ogg">
+    <source src="sounds/forward.mp3" type="audio/mp3">
+</audio>
