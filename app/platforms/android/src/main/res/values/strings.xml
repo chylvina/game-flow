@@ -1,0 +1,21 @@
+<resources>
+
+    <string name="app_name">App Test</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="activity_scrollview">ScrollView</string>
+    <string name="activity_listview">ListView</string>
+    <string name="activity_gridview">GridView</string>
+    <string name="activity_webview">WebView</string>
+    <string name="activity_fragment_tabs">Fragments + Tabs</string>
+    <string name="activity_fragment_tabs_vp">Fragments + Tabs + ViewPager</string>
+
+    <string name="no_data">暂无数据</string>
+
+    <string name="error_loading">加载出错</string>
+
+    <string name="filler_text">Lorem ipsum</string>
+
+</resources>

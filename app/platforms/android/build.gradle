@@ -1,0 +1,38 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath 'com.android.tools.build:gradle:0.7.+'
+	}
+}
+
+apply plugin: 'android'
+
+repositories {
+    maven { url "http://dl.bintray.com/populov/maven" }
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    compile 'javax.inject:javax.inject:1@jar'
+    compile files('libs/gson-2.2.4.jar')
+    compile "com.github.kevinsawicki:http-request:5.5"
+    //compile "com.octo.android.robospice:robospice:1.4.9"
+    compile 'com.android.support:support-v4:18.0.+'
+    //compile 'com.github.kevinsawicki:wishlist:0.9@aar'
+    compile 'com.actionbarsherlock:actionbarsherlock:4.4.0@aar'
+    compile 'com.github.chrisbanes.actionbarpulltorefresh:extra-abs:0.9.2'
+    compile 'net.simonvt.menudrawer:menudrawer:3.0.4@aar'
+    compile 'com.viewpagerindicator:library:2.4.1@aar'
+}
+
+android {
+	compileSdkVersion 18
+	buildToolsVersion "18.0.1"
+	
+	defaultConfig {
+		targetSdkVersion 18
+	}
+}
