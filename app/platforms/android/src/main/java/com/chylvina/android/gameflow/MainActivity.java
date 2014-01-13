@@ -3,9 +3,11 @@ package com.chylvina.android.gameflow;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -22,6 +24,9 @@ public class MainActivity extends Activity {
 
         mWebView = (WebView) findViewById(R.id.webview);
         mWebView.getSettings().setJavaScriptEnabled(true);
+        mWebView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN)
+            mWebView.getSettings().setAllowUniversalAccessFromFileURLs(true);
 
         mWebView.setWebChromeClient(new WebChromeClient() {
 
@@ -48,9 +53,13 @@ public class MainActivity extends Activity {
             }
         }, "demo");
 
-
-        // mWebView.loadUrl("http://www.baidu.com");
         mWebView.loadUrl("file:///android_asset/index.html");
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
     }
 
 }
