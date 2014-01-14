@@ -12,10 +12,11 @@ $(document).ready(function () {
   liContext = liCanvas.getContext("2d");
   //Sleak = document.getElementById("Sleak");
   //Sforward = document.getElementById("Sforward");
-  liCanvas.addEventListener("mouseup", function () {
+  liCanvas.addEventListener("touchend", function (ev) {
+    ev.preventDefault();
+    console.log("touch end");
     mouseDown = false;
     $("#movesC").html(movesC)
-
   }, false);
 });
 function mkGame(size, levelBoxsA) {
@@ -105,6 +106,7 @@ function mkGame(size, levelBoxsA) {
   liCanvas.addEventListener("touchmove", pointerMove, false);
 
   function pointerStart(ev) {
+    ev.preventDefault();
     console.log(ev);
     mouseDown = true;
     var evX, evY;
@@ -132,9 +134,11 @@ function mkGame(size, levelBoxsA) {
   }
 
   function pointerMove(ev) {
+    ev.preventDefault();
+    console.log(ev);
     var evX, evY;
-    evX = ev.pageX || ev.layerX;
-    evY = ev.pageY || ev.layerY;
+    evX = ev.touches[0].pageX;
+    evY = ev.touches[0].pageY;
 
     var boxId = (parseInt(evY / boxSize) * size) + parseInt(evX / boxSize);
 
