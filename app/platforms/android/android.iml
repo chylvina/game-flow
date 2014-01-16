@@ -72,9 +72,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 18 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="Gradle: ComViewpagerindicatorLibrary241.aar" level="project" />
     <orderEntry type="library" exported="" name="Gradle: ComGithubChrisbanesActionbarpulltorefreshLibrary092.aar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: NetSimonvtMenudrawerMenudrawer304.aar" level="project" />
     <orderEntry type="library" exported="" name="Gradle: gson-2.2.4" level="project" />
     <orderEntry type="library" exported="" name="Gradle: http-request-5.5" level="project" />
     <orderEntry type="library" exported="" name="Gradle: support-v4-19.0.0" level="project" />

@@ -1,9 +1,7 @@
-/*********************************
- * BY : MOHAMMED NAFIZ AL-MADHOUN
- * E-MAIL : MOHELM97@GMAIL.COM
- * 15 YEARSOLD :D
- * WITH MY LOVE <3
- *********************************/
+var bgCanvas,
+  liCanvas,
+  bgContext,
+  liContext;
 
 $(document).ready(function () {
   bgCanvas = document.getElementById("bgCanvas");
