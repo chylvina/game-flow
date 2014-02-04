@@ -1,22 +1,10 @@
-
 var bgCanvas,
   liCanvas,
   bgContext,
   liContext;
 
-var nowLevelNo = -1;
-var nowPackNo = -1;
-var levelCount = 0;
-var nowLevelS = 0;
-var levelSCount = 0;
-var compLevels = "";
-var compArray = [];
-var packComp = [];
-var flowjson;
-var allLevels;
-
 $(document).ready(function () {
-  /*bgCanvas = document.getElementById("bgCanvas");
+  bgCanvas = document.getElementById("bgCanvas");
   liCanvas = document.getElementById("liCanvas");
   bgContext = bgCanvas.getContext("2d");
   liContext = liCanvas.getContext("2d");
@@ -27,7 +15,7 @@ $(document).ready(function () {
     console.log("touch end");
     mouseDown = false;
     $("#movesC").html(movesC)
-  }, false);*/
+  }, false);
 });
 function mkGame(size, levelBoxsA) {
   $("#Perc").html("0");
@@ -290,21 +278,3 @@ function mkGame(size, levelBoxsA) {
     }
   }
 }
-
-angular.module('flowApp')
-  .controller('MainCtrl', function ($scope) {
-    bgCanvas = document.getElementById("bgCanvas");
-    liCanvas = document.getElementById("liCanvas");
-    bgContext = bgCanvas.getContext("2d");
-    liContext = liCanvas.getContext("2d");
-    //Sleak = document.getElementById("Sleak");
-    //Sforward = document.getElementById("Sforward");
-    liCanvas.addEventListener("touchend", function (ev) {
-      ev.preventDefault();
-      console.log("touch end");
-      mouseDown = false;
-      $("#movesC").html(movesC)
-    }, false);
-
-    mkGame(6, JSON.parse('[["0","24"],["1","30"],["2","14"],["4","20"],["5","32"],["10","26"]]'));
-  });
