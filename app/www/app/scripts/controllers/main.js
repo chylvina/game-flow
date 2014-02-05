@@ -15,6 +15,8 @@ var packComp = [];
 var flowjson;
 var allLevels;
 
+var theSize = 550;
+
 $(document).ready(function () {
   /*bgCanvas = document.getElementById("bgCanvas");
   liCanvas = document.getElementById("liCanvas");
@@ -34,8 +36,8 @@ function mkGame(size, levelBoxsA) {
   $("#movesC").html("0");
 
 
-  bgContext.clearRect(0, 0, 550, 550);
-  liContext.clearRect(0, 0, 550, 550);
+  bgContext.clearRect(0, 0, theSize, theSize);
+  liContext.clearRect(0, 0, theSize, theSize);
   idoArray = $("#levels a[data-lno='" + nowLevelNo + "']").attr("data-cano");
   movesC = 0;
   if (compArray[idoArray]) {
@@ -49,13 +51,13 @@ function mkGame(size, levelBoxsA) {
   }
   $("#movesB").html(movesB);
   FWSpeed = 1;
-  level = []
+  level = [];
   colors_d = ["rgba(247,125,0,1)", "rgba(0,0,255,1)", "rgba(0,129,0,1)", "rgba(239,239,0,1)", "rgba(255,0,0,1)", "rgba(0,255,255,1)", "rgba(255,0,255,1)", "rgba(164,45,41,1)", "rgba(123,0,123,1)", "rgba(255,255,255,1)", "rgba(0,0,140,1)", "rgba(0,125,123,1)", "rgba(165,165,165,1)", "rgba(0,255,0,1)", "rgba(189,182,107,1)", "rgba(255,20,148,1)"];
-  boxSize = 550 / size;
+  boxSize = theSize / size;
   HboxSize = boxSize / 2;
   lineSize = boxSize * 33 / 100;
   CircSize = boxSize * 35 / 100;
-  boxs = []
+  boxs = [];
   mouseDown = false;
   levelColor = -1;
   oldBox = -1;
@@ -66,9 +68,9 @@ function mkGame(size, levelBoxsA) {
   bgContext.beginPath();
   for (var y = 0; y < size; y++) {
     bgContext.moveTo(y * boxSize, 0);
-    bgContext.lineTo(y * boxSize, 550);
+    bgContext.lineTo(y * boxSize, theSize);
     bgContext.moveTo(0, y * boxSize);
-    bgContext.lineTo(550, y * boxSize);
+    bgContext.lineTo(theSize, y * boxSize);
     for (var x = 0; x < size; x++) {
       boxs.push({
         state: 0,
@@ -77,10 +79,10 @@ function mkGame(size, levelBoxsA) {
       });
     }
   }
-  bgContext.moveTo(550, 0);
-  bgContext.lineTo(550, 550);
-  bgContext.moveTo(0, 550);
-  bgContext.lineTo(550, 550);
+  bgContext.moveTo(theSize, 0);
+  bgContext.lineTo(theSize, theSize);
+  bgContext.moveTo(0, theSize);
+  bgContext.lineTo(theSize, theSize);
   bgContext.strokeStyle = "#fff";
   bgContext.stroke();
   bgContext.closePath()
@@ -116,12 +118,14 @@ function mkGame(size, levelBoxsA) {
   liCanvas.addEventListener("touchmove", pointerMove, false);
 
   function pointerStart(ev) {
+    console.log('touchstart', ev);
+
     ev.preventDefault();
-    console.log(ev);
+
     mouseDown = true;
     var evX, evY;
-    evX = ev.offsetX || ev.layerX;
-    evY = ev.offsetY || ev.layerY;
+    evX = ev.touches[0].pageX;
+    evY = ev.touches[0].pageY;
 
     boxId = (parseInt(evY / boxSize) * size) + parseInt(evX / boxSize);
     if (levelColor != boxs[boxId].colorIndex) {
@@ -144,8 +148,10 @@ function mkGame(size, levelBoxsA) {
   }
 
   function pointerMove(ev) {
+    console.log('touchmove', ev);
+
     ev.preventDefault();
-    console.log(ev);
+
     var evX, evY;
     evX = ev.touches[0].pageX;
     evY = ev.touches[0].pageY;
@@ -195,7 +201,7 @@ function mkGame(size, levelBoxsA) {
         box.colorIndex = levelColor;
         level[levelColor].line.push(boxId);
       }
-      liContext.clearRect(0, 0, 550, 550);
+      liContext.clearRect(0, 0, theSize, theSize);
       var boxsSum = 0;
       var compSum = 0;
       var PlayTS = false;
