@@ -121,7 +121,8 @@ module.exports = function (grunt) {
           ]
         }]
       },
-      server: '.tmp'
+      server: '.tmp',
+      android: '../platforms/Flow/app/src/main/assets'
     },
 
     // Add vendor prefixed styles
@@ -391,7 +392,6 @@ module.exports = function (grunt) {
     'cdnify',
     'cssmin',
     'uglify',
-    'rev',
     'usemin',
     'htmlmin'
   ]);
