@@ -308,13 +308,15 @@ angular.module('flowApp', [
         templateUrl: 'views/landing.html',
         controller: 'landingCtrl'
       })
+      .when('/play', {
+        templateUrl: 'views/play.html',
+        controller: 'playCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
   })
-  .controller('landingCtrl', function ($scope) {
-    console.log(window.innerWidth, window.innerHeight);
-
+  .controller('playCtrl', function ($scope) {
     bgCanvas = document.getElementById("bgCanvas");
     liCanvas = document.getElementById("liCanvas");
     bgContext = bgCanvas.getContext("2d");
@@ -329,4 +331,8 @@ angular.module('flowApp', [
     }, false);
 
     mkGame(6, JSON.parse('[["0","24"],["1","30"],["2","14"],["4","20"],["5","32"],["10","26"]]'));
+  })
+  .controller('landingCtrl', function ($scope) {
+    console.log(window.innerWidth, window.innerHeight);
+
   });
